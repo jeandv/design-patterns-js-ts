@@ -40,3 +40,7 @@ console.log(names); // <-- No cambia, es inmutable!!
 
 names.sort();
 console.log(names); // <-- Si cambia, es mutable!!
+
+// map - crea nuevo array independiente.
+const namesUpper = names.map(name => name.toUpperCase());
+console.log(namesUpper); // <-- nuevo array no afecta al array original name.
