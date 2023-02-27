@@ -77,7 +77,27 @@ function Drink2(name) {
 }
 
 const drink = new Drink('Monster');
-console.log(drink.info);
+console.log(drink.info());
 
 const drink2 = new Drink2('RedBull');
-console.log(drink.info);
+console.log(drink2.info());
+
+// herencia en JS
+class Beer extends Drink {
+
+  constructor(name, alcohol) {
+
+    super(name); // Llamamos y enviamos lo que pide el constructor padre usando: super();
+
+    this.alcohol = alcohol;
+
+  }
+
+  info() { // podemos modificar el comportamiento de info.
+    return super.info() + ' ' + this.alcohol;
+  }
+
+}
+
+const beer = new Beer('CORONA', 7.5);
+console.log(beer);
