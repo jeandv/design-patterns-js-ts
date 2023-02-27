@@ -50,3 +50,34 @@ const numbers = [3, 4, 5, 6, 21, 50];
 
 const total = numbers.reduce((ac, number) => ac + number, 0);
 console.log(total);
+
+// PROGRAMACIÓN ORIENTADA A OBJETOS
+// clases
+class Drink {
+
+  constructor(name) {
+    this.name = name;
+  }
+
+  info() {
+    return 'la bebida es: ' + this.name;
+  }
+
+}
+
+//funcional
+function Drink2(name) {
+
+  this.name = name;
+
+  this.info = function () {
+    return 'la bebida es: ' + this.name;
+  }
+
+}
+
+const drink = new Drink('Monster');
+console.log(drink.info);
+
+const drink2 = new Drink2('RedBull');
+console.log(drink.info);
