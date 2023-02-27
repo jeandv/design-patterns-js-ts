@@ -29,3 +29,14 @@ operation((a, b) => {
   return c * 2;
 
 }, 1, 2);
+
+// forEach <-- Inmutable
+const names = ['Jean', 'Antony', 'Rondón', 'Beroy'];
+
+names.forEach(name => console.log(name));
+
+names.forEach(name => console.log(name.toUpperCase()));
+console.log(names); // <-- No cambia, es inmutable!!
+
+names.sort();
+console.log(names); // <-- Si cambia, es mutable!!
