@@ -100,4 +100,4 @@ class Beer extends Drink {
 }
 
 const beer = new Beer('CORONA', 7.5);
-console.log(beer);
+console.log(beer.info());
