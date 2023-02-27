@@ -44,3 +44,9 @@ console.log(names); // <-- Si cambia, es mutable!!
 // map - crea nuevo array independiente.
 const namesUpper = names.map(name => name.toUpperCase());
 console.log(namesUpper); // <-- nuevo array no afecta al array original name.
+
+// reduce
+const numbers = [3, 4, 5, 6, 21, 50];
+
+const total = numbers.reduce((ac, number) => ac + number, 0);
+console.log(total);
