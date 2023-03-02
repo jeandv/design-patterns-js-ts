@@ -1,0 +1,1 @@
+console.log('Patron de diseño OBSERVER!! con TS.');
