@@ -98,6 +98,33 @@ class FormBuilder {
 
 }
 
+class FormDirector {
+
+  constructor(formBuilder) {
+    this.setBuilder(formBuilder);
+  }
+
+  setBuilder(formBuilder) {
+    this.formBuilder = formBuilder;
+  }
+
+  createPeopleForm() {
+    this.formBuilder.reset();
+    this.formBuilder.setText('firstName', 'Nombre')
+      .setText('lastName', 'Apellido')
+  }
+
+  createContactForm() {
+    this.formBuilder.reset();
+    this.formBuilder.setText('firstName', 'Nombre')
+      .setEmail('email', 'Correo')
+      .setText('messge', 'Mensaje')
+
+
+  }
+
+}
+
 const formBuilder = new FormBuilder();
 
 const formPeople = formBuilder.setAction('add.php')
@@ -117,3 +144,14 @@ const formMail = formBuilder.setAction('send.php')
   .build();
 
 form2.innerHTML = formMail.getContent();
+
+
+const director = new FormDirector(formBuilder);
+director.createPeopleForm();
+form3.innerHTML = formBuilder.build().getContent();
+
+director.createPeopleForm();
+form4.innerHTML = formBuilder.build().getContent();
+
+director.createContactForm();
+form5.innerHTML = formBuilder.build().getContent();
