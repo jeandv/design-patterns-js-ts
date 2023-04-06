@@ -117,8 +117,28 @@ class NormalPersonBuilder implements PersonBuilder {
 
 }
 
-// creacion 1
+class PersonDirector {
 
+  private personBuilder: PersonBuilder;
+
+
+  constructor(personBuilder: PersonBuilder) {
+    this.personBuilder = personBuilder;
+  }
+
+  setPersonBuilder(personBuilder: PersonBuilder) {
+    this.personBuilder = personBuilder;
+  }
+
+  createSimplePerson(name: string, lastName: string) {
+    this.personBuilder
+      .setName(name)
+      .setLastName(lastName);
+  }
+
+}
+
+// creacion 1
 const personBuilder = new NormalPersonBuilder();
 
 const jean = personBuilder.setName('Jean')
@@ -129,6 +149,7 @@ const jean = personBuilder.setName('Jean')
 
 console.log(jean);
 
+// creacion 2
 const oli = personBuilder.setName('Oli')
   .setCountry('Venezuela')
   .setCity('Lara')
@@ -137,3 +158,11 @@ const oli = personBuilder.setName('Oli')
   .build()
 
 console.log(oli);
+
+// creacion 1 con director
+const director = new PersonDirector(personBuilder);
+director.createSimplePerson('Cristiano', 'Ronaldo');
+
+const cr7 = personBuilder.build();
+
+console.log(cr7);
